@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: cpu-java
+spec:
+  template:
+    spec:
+      containers:
+        - image: 192.168.137.179:5000/cpu-java:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+
