@@ -5,10 +5,23 @@ metadata:
   namespace: default
 spec:
   template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/min-scale: "0"
+        autoscaling.knative.dev/max-scale: "1"
+        autoscaling.knative.dev/target: "1"
     spec:
+      runtimeClassName: crun
       containers:
-        - image: 192.168.137.179:5000/object-detect:latest
+        - image: 192.168.137.27:5000/object-detect:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
+          resources:
+            requests:
+              cpu: 1158m
+              memory: 2048Mi
+            limits:
+              cpu: 1158m
+              memory: 2048Mi
 

@@ -1,0 +1,27 @@
+[MAIN][INFO] Program start [hot-object-detect-2-1783012898642845278] time: 2026-07-02 17:21:38.681
+[MAIN][INFO] Args [hot-object-detect-2-1783012898642845278] model: /app/model/yolov8n.torchscript, image: /app/model/input.jpg
+[程序启动] 时间戳: 1783012904643 ms (2026-07-02 17:21:44.643)
+model_bin_name /app/model/yolov8n.torchscript
+image_name /app/model/input.jpg
+Loaded model from file: /app/model/yolov8n.torchscript
+Read input tensor, size in bytes: 4915200
+
+Running 1 iteration(s)...
+================================================================================
+
+[Iteration 1/1]
+Performing inference...
+Inference time: 3.7455s
+
+Detected 2 objects:
+InferenceResult { x: 186, y: 40, width: 362, height: 327, class: "banana", probability: 0.7805 }
+InferenceResult { x: 169, y: 103, width: 240, height: 182, class: "orange", probability: 0.5527 }
+
+================================================================================
+Completed 1 iteration(s)
+Total time: 4.2429s
+Average inference time: 4.2429s
+Throughput: 0.24 inferences/second
+[程序结束] 时间戳: 1783012909448 ms (2026-07-02 17:21:49.448)
+[总运行时间] 4805 ms (4.805 秒)
+[MAIN][INFO] Program end [hot-object-detect-2-1783012898642845278] time: 2026-07-02 17:21:50.459

@@ -1,0 +1,123 @@
+[MAIN][INFO] Program start [hot-core-network-2-1782988363247955768] time: 2026-07-02 10:32:43.285
+[MAIN_SIM][INFO] Program start time: 2026-07-02 10:32:43.288
+[MAIN_SIM][INFO] --- Starting 5G Core NF Simulation (AMF, SMF, UPF) ---
+[AMF_SIM][INFO] Initializing AMF...
+[AMF_SIM][INFO] AMF initialization complete.
+[SMF_SIM][INFO] Initializing SMF...
+[SMF_SIM][INFO] SMF initialization complete.
+[UPF_SIM][INFO] Initializing UPF...
+[UPF_SIM][INFO] UPF initialization complete.
+[MAIN_SIM][INFO] --- Simulating UE1 (IMSI: 100000000000001) Registration ---
+[GNB_SIM][INFO] UE (IMSI: 100000000000001) initiating access, gNB uses its GNB_UE_NGAP_ID: 101 for this procedure
+[GNB_SIM][INFO] Sending InitialUEMessage to AMF (GNB_UE_ID in msg: 101, NAS IMSI: 100000000000001)
+[AMF_SIM][INFO] Received NGAP message from gNB: Type=1, GNB_UE_ID=101 (from msg_header), AMF_UE_ID=0 (from msg_header, if present)
+[AMF_SIM][DEBUG] NGAP message is InitialUEMessage.
+[AMF_SIM][DEBUG]   InitialUEMessage contains NAS Registration Request.
+[AMF_SIM][INFO] Processing NAS Registration Request from gNB_UE_ID: 101, for IMSI: 100000000000001
+[AMF_SIM][DEBUG] Allocated new UE context slot at index: 0
+[AMF_SIM][DEBUG] Allocating new AMF_UE_NGAP_ID: 1
+[AMF_SIM][INFO] New UE registration: IMSI 100000000000001, AMF assigned AMF_UE_ID: 1
+[AMF_SIM][INFO] IMSI 100000000000001: (Simulated) Authentication procedure skipped.
+[AMF_SIM][INFO] IMSI 100000000000001: (Simulated) NAS Security Mode Control skipped.
+[AMF_SIM][INFO] IMSI 100000000000001: Registration procedure ongoing. Current Context: AMF_UE_ID: 1, GNB_UE_ID: 101. State: REGISTERING.
+[AMF_SIM][INFO] IMSI 100000000000001: Preparing NGAP InitialContextSetupRequest for gNB (AMF_UE_ID: 1, GNB_UE_ID: 101)
+[AMF_SIM][DEBUG]   NGAP InitialContextSetupRequest (simulated send): NAS_Type=2, NAS_IMSI=100000000000001
+[GNB_SIM][INFO] Preparing InitialContextSetupResponse for AMF (Target AMF_UE_ID:1, Own GNB_UE_ID:101, Success:1)
+[GNB_SIM][INFO] Sending InitialContextSetupResponse to AMF (AMF_UE_ID:1, GNB_UE_ID:101)
+[AMF_SIM][INFO] Received NGAP message from gNB: Type=5, GNB_UE_ID=101 (from msg_header), AMF_UE_ID=1 (from msg_header, if present)
+[AMF_SIM][DEBUG] NGAP message is InitialContextSetupResponse.
+[AMF_SIM][INFO] IMSI 100000000000001 (Context AMF_UE_ID 1): gNB confirmed InitialContextSetup success. Context GNB_UE_ID: 101, Msg GNB_UE_ID: 101.
+[AMF_SIM][DEBUG] IMSI 100000000000001: State updated to REGISTERED after InitialContextSetupResponse.
+[MAIN_SIM][INFO] --- Simulating UE1 (IMSI: 100000000000001) PDU Session Establishment Request (PDU_ID: 5) ---
+[AMF_SIM][INFO] Attempting to trigger PDU Session Request for IMSI 100000000000001, PDU_ID 5
+[AMF_SIM][INFO] IMSI 100000000000001 (Context AMF_UE_ID 1): Processing NAS PDU Session Estab Request for PDU_ID 5
+[AMF_SIM][INFO] IMSI 100000000000001: Sending Create PDU Session Request to SMF (PDU_ID 5, Associated AMF_UE_ID 1)
+[SMF_SIM][INFO] Handling Create PDU Session Request from AMF: IMSI 100000000000001, PDU_ID 5, Associated AMF_UE_ID 1, Associated GNB_UE_ID 101
+[SMF_SIM][DEBUG] Allocated new PDU session context at index: 0
+[SMF_SIM][DEBUG] IMSI 100000000000001, PDU_ID 5: Simulated gNB_N3_TEID based on GNB_UE_ID 101 from AMF: 30101
+[SMF_SIM][DEBUG] IMSI 100000000000001, PDU_ID 5: (Simulated) UPF selection complete (assuming one UPF).
+[SMF_SIM][INFO] IMSI 100000000000001, PDU_ID 5: Assigned UE IP Address: 10.0.0.1
+[SMF_SIM][INFO] Sending Session Establishment Request to UPF for IMSI 100000000000001, PDU ID 5, UE IP 10.0.0.1, gNB_N3_TEID 30101
+[UPF_SIM][INFO] Handling Session Establishment Request from SMF: IMSI 100000000000001, PDU_ID 5, UE_IP 10.0.0.1, gNB_N3_TEID 30101
+[UPF_SIM][DEBUG] Allocated new UPF PDU session context at index: 0
+[UPF_SIM][DEBUG] Allocating new UPF N3 TEID: 20000
+[UPF_SIM][INFO] IMSI 100000000000001, PDU_ID 5: UPF session context configured. UE_IP: 10.0.0.1, gNB_N3_TEID: 30101, UPF_N3_TEID: 20000. State: ACTIVE
+[UPF_SIM][DEBUG] IMSI 100000000000001, PDU_ID 5: (Simulated) Packet Detection and Forwarding Rules installed.
+[SMF_SIM][INFO] Received Session Establishment Response from UPF for IMSI 100000000000001, PDU_ID 5. Success: 1, UPF_N3_TEID: 20000
+[SMF_SIM][INFO] IMSI 100000000000001, PDU_ID 5: User plane setup successful with UPF. UPF_N3_TEID: 20000. State: ACTIVE
+[AMF_SIM][INFO] IMSI 100000000000001: SMF successfully established PDU session 5. UE IP: 10.0.0.1, UPF_N3_TEID: 20000
+[AMF_SIM][DEBUG] IMSI 100000000000001: Stored PDU session 5 info in AMF context at pdu_sessions[0]
+[AMF_SIM][INFO] IMSI 100000000000001: Preparing NGAP PDUSessionResourceSetupRequest for gNB (PDU_ID 5). N2 SM Info (UPF N3 TEID: 20000, UE IP: 10.0.0.1)
+[AMF_SIM][DEBUG]   NGAP PDUSessionResourceSetupRequest (simulated send)
+[GNB_SIM][INFO] Preparing PDUSessionResourceSetupResponse for AMF (Target AMF_UE_ID:1, Own GNB_UE_ID:101, PDU_ID:5, Success:1)
+[GNB_SIM][INFO] Sending PDUSessionResourceSetupResponse to AMF (AMF_UE_ID:1, GNB_UE_ID:101, PDU_ID:5)
+[AMF_SIM][INFO] Received NGAP message from gNB: Type=7, GNB_UE_ID=101 (from msg_header), AMF_UE_ID=1 (from msg_header, if present)
+[AMF_SIM][DEBUG] NGAP message is PDUSessionResourceSetupResponse.
+[AMF_SIM][INFO] IMSI 100000000000001 (Context AMF_UE_ID 1): gNB confirmed PDUSessionResourceSetup success for PDU_ID 5.
+[AMF_SIM][DEBUG] IMSI 100000000000001, PDU_ID 5: UE overall state updated to PDU_SESSION_ACTIVE.
+[MAIN_SIM][INFO] --- Simulating Data Flow for UE1 (IP: 10.0.0.1, UPF_N3_TEID: 20000, GNB_N3_TEID_for_UPF: 30101) ---
+[UPF_SIM][INFO] Received UPLINK data on UPF_N3_TEID: 20000 (from UE_IP: 10.0.0.1), Data: 'Hello from UE1 to Internet!', Length: 27
+[UPF_SIM][DEBUG]   Matching session for UL data: IMSI 100000000000001, PDU_ID 5, UE_IP 10.0.0.1
+[UPF_SIM][INFO]   (Simulated) Forwarding UL data from UE 10.0.0.1 to Data Network (N6)...
+[UPF_SIM][INFO] Received DOWNLINK data from N6 (Internet) for UE_IP: 10.0.0.1, Data: 'Welcome to Internet from Serve', Length: 30
+[UPF_SIM][DEBUG]   Matching session for DL data: IMSI 100000000000001, PDU_ID 5, gNB_N3_TEID 30101, UPF_N3_TEID 20000
+[UPF_SIM][INFO]   (Simulated) Encapsulating DL data with GTP-U (UPF_TEID 20000 -> gNB_TEID 30101) and sending to gNB via N3...
+[MAIN_SIM][INFO] --- Simulating UE2 (IMSI: 100000000000002) Registration ---
+[GNB_SIM][INFO] UE (IMSI: 100000000000002) initiating access, gNB uses its GNB_UE_NGAP_ID: 102 for this procedure
+[GNB_SIM][INFO] Sending InitialUEMessage to AMF (GNB_UE_ID in msg: 102, NAS IMSI: 100000000000002)
+[AMF_SIM][INFO] Received NGAP message from gNB: Type=1, GNB_UE_ID=102 (from msg_header), AMF_UE_ID=0 (from msg_header, if present)
+[AMF_SIM][DEBUG] NGAP message is InitialUEMessage.
+[AMF_SIM][DEBUG]   InitialUEMessage contains NAS Registration Request.
+[AMF_SIM][INFO] Processing NAS Registration Request from gNB_UE_ID: 102, for IMSI: 100000000000002
+[AMF_SIM][DEBUG] Allocated new UE context slot at index: 1
+[AMF_SIM][DEBUG] Allocating new AMF_UE_NGAP_ID: 2
+[AMF_SIM][INFO] New UE registration: IMSI 100000000000002, AMF assigned AMF_UE_ID: 2
+[AMF_SIM][INFO] IMSI 100000000000002: (Simulated) Authentication procedure skipped.
+[AMF_SIM][INFO] IMSI 100000000000002: (Simulated) NAS Security Mode Control skipped.
+[AMF_SIM][INFO] IMSI 100000000000002: Registration procedure ongoing. Current Context: AMF_UE_ID: 2, GNB_UE_ID: 102. State: REGISTERING.
+[AMF_SIM][INFO] IMSI 100000000000002: Preparing NGAP InitialContextSetupRequest for gNB (AMF_UE_ID: 2, GNB_UE_ID: 102)
+[AMF_SIM][DEBUG]   NGAP InitialContextSetupRequest (simulated send): NAS_Type=2, NAS_IMSI=100000000000002
+[GNB_SIM][INFO] Preparing InitialContextSetupResponse for AMF (Target AMF_UE_ID:2, Own GNB_UE_ID:102, Success:1)
+[GNB_SIM][INFO] Sending InitialContextSetupResponse to AMF (AMF_UE_ID:2, GNB_UE_ID:102)
+[AMF_SIM][INFO] Received NGAP message from gNB: Type=5, GNB_UE_ID=102 (from msg_header), AMF_UE_ID=2 (from msg_header, if present)
+[AMF_SIM][DEBUG] NGAP message is InitialContextSetupResponse.
+[AMF_SIM][INFO] IMSI 100000000000002 (Context AMF_UE_ID 2): gNB confirmed InitialContextSetup success. Context GNB_UE_ID: 102, Msg GNB_UE_ID: 102.
+[AMF_SIM][DEBUG] IMSI 100000000000002: State updated to REGISTERED after InitialContextSetupResponse.
+[MAIN_SIM][INFO] --- Simulating UE2 (IMSI: 100000000000002) PDU Session Establishment Request (PDU_ID: 7) ---
+[AMF_SIM][INFO] Attempting to trigger PDU Session Request for IMSI 100000000000002, PDU_ID 7
+[AMF_SIM][INFO] IMSI 100000000000002 (Context AMF_UE_ID 2): Processing NAS PDU Session Estab Request for PDU_ID 7
+[AMF_SIM][INFO] IMSI 100000000000002: Sending Create PDU Session Request to SMF (PDU_ID 7, Associated AMF_UE_ID 2)
+[SMF_SIM][INFO] Handling Create PDU Session Request from AMF: IMSI 100000000000002, PDU_ID 7, Associated AMF_UE_ID 2, Associated GNB_UE_ID 102
+[SMF_SIM][DEBUG] Allocated new PDU session context at index: 1
+[SMF_SIM][DEBUG] IMSI 100000000000002, PDU_ID 7: Simulated gNB_N3_TEID based on GNB_UE_ID 102 from AMF: 30102
+[SMF_SIM][DEBUG] IMSI 100000000000002, PDU_ID 7: (Simulated) UPF selection complete (assuming one UPF).
+[SMF_SIM][INFO] IMSI 100000000000002, PDU_ID 7: Assigned UE IP Address: 10.0.0.2
+[SMF_SIM][INFO] Sending Session Establishment Request to UPF for IMSI 100000000000002, PDU ID 7, UE IP 10.0.0.2, gNB_N3_TEID 30102
+[UPF_SIM][INFO] Handling Session Establishment Request from SMF: IMSI 100000000000002, PDU_ID 7, UE_IP 10.0.0.2, gNB_N3_TEID 30102
+[UPF_SIM][DEBUG] Allocated new UPF PDU session context at index: 1
+[UPF_SIM][DEBUG] Allocating new UPF N3 TEID: 20001
+[UPF_SIM][INFO] IMSI 100000000000002, PDU_ID 7: UPF session context configured. UE_IP: 10.0.0.2, gNB_N3_TEID: 30102, UPF_N3_TEID: 20001. State: ACTIVE
+[UPF_SIM][DEBUG] IMSI 100000000000002, PDU_ID 7: (Simulated) Packet Detection and Forwarding Rules installed.
+[SMF_SIM][INFO] Received Session Establishment Response from UPF for IMSI 100000000000002, PDU_ID 7. Success: 1, UPF_N3_TEID: 20001
+[SMF_SIM][INFO] IMSI 100000000000002, PDU_ID 7: User plane setup successful with UPF. UPF_N3_TEID: 20001. State: ACTIVE
+[AMF_SIM][INFO] IMSI 100000000000002: SMF successfully established PDU session 7. UE IP: 10.0.0.2, UPF_N3_TEID: 20001
+[AMF_SIM][DEBUG] IMSI 100000000000002: Stored PDU session 7 info in AMF context at pdu_sessions[0]
+[AMF_SIM][INFO] IMSI 100000000000002: Preparing NGAP PDUSessionResourceSetupRequest for gNB (PDU_ID 7). N2 SM Info (UPF N3 TEID: 20001, UE IP: 10.0.0.2)
+[AMF_SIM][DEBUG]   NGAP PDUSessionResourceSetupRequest (simulated send)
+[GNB_SIM][INFO] Preparing PDUSessionResourceSetupResponse for AMF (Target AMF_UE_ID:2, Own GNB_UE_ID:102, PDU_ID:7, Success:1)
+[GNB_SIM][INFO] Sending PDUSessionResourceSetupResponse to AMF (AMF_UE_ID:2, GNB_UE_ID:102, PDU_ID:7)
+[AMF_SIM][INFO] Received NGAP message from gNB: Type=7, GNB_UE_ID=102 (from msg_header), AMF_UE_ID=2 (from msg_header, if present)
+[AMF_SIM][DEBUG] NGAP message is PDUSessionResourceSetupResponse.
+[AMF_SIM][INFO] IMSI 100000000000002 (Context AMF_UE_ID 2): gNB confirmed PDUSessionResourceSetup success for PDU_ID 7.
+[AMF_SIM][DEBUG] IMSI 100000000000002, PDU_ID 7: UE overall state updated to PDU_SESSION_ACTIVE.
+[MAIN_SIM][INFO] --- Simulating Data Flow for UE2 (IP: 10.0.0.2, UPF_N3_TEID: 20001, GNB_N3_TEID_for_UPF: 30102) ---
+[UPF_SIM][INFO] Received UPLINK data on UPF_N3_TEID: 20001 (from UE_IP: 10.0.0.2), Data: 'Another packet from UE2!', Length: 24
+[UPF_SIM][DEBUG]   Matching session for UL data: IMSI 100000000000002, PDU_ID 7, UE_IP 10.0.0.2
+[UPF_SIM][INFO]   (Simulated) Forwarding UL data from UE 10.0.0.2 to Data Network (N6)...
+[UPF_SIM][INFO] Received DOWNLINK data from N6 (Internet) for UE_IP: 10.0.0.2, Data: 'Server says hi to UE2!', Length: 22
+[UPF_SIM][DEBUG]   Matching session for DL data: IMSI 100000000000002, PDU_ID 7, gNB_N3_TEID 30102, UPF_N3_TEID 20001
+[UPF_SIM][INFO]   (Simulated) Encapsulating DL data with GTP-U (UPF_TEID 20001 -> gNB_TEID 30102) and sending to gNB via N3...
+[MAIN_SIM][INFO] Program end time: 2026-07-02 10:32:43.289
+[MAIN_SIM][INFO] Total execution time: 0 ms (0.000 s)
+[MAIN_SIM][INFO] --- 5G Core NF Simulation Finished ---
+[MAIN][INFO] Program end [hot-core-network-2-1782988363247955768] time: 2026-07-02 10:32:43.310
